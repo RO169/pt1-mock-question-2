@@ -32,20 +32,17 @@ ostream& operator<<(ostream &out, const Time &T)
 	return out << T.hours << " : " << T.minutes << endl;
 }
 
-Time &Time::operator++()
-{
-	++minutes;
-	if (minutes >= 60)
-	{
-		minutes = 0;
-		++hours;
-	}
-	return *this;
-}
-
 Time Time::operator++(int)
 {
-	Time t(*this);
-	operator++();
-	return t;
+		// save the orignal value
+		Time T(hours, minutes);
+		// increment this object
+		++minutes;
+		if (minutes >= 60)
+		{
+			++hours;
+			minutes -= 60;
+		}
+		// return old original value
+		return T;
 }
