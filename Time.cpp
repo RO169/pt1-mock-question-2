@@ -35,7 +35,7 @@ ostream& operator<<(ostream &out, const Time &T)
 Time &Time::operator++()
 {
 	++minutes;
-	if (minutes > 60)
+	if (minutes >= 60)
 	{
 		minutes = 0;
 		++hours;

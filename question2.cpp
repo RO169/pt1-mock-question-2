@@ -5,6 +5,7 @@
 // Date: 04/2015
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
+#include"Time.h"
 
 using namespace std;
 
@@ -29,6 +30,12 @@ int main(int argc, char *argv[]) {
 
 	int hours, mins;									// get changed time
 	myTime.get(hours, mins);
-	cout << "Design 1 starts at " << mins << " past " << hours;   // display time in another format
+	cout << "Design 1 starts at " << mins << " past " << hours << endl << endl;   // display time in another format
 
+	Time t(4, 59);                                      //test overloaded ++ operator                                    
+	t++; 
+	cout << t << endl;
+
+	system("Pause");
+	return 0;
 }
